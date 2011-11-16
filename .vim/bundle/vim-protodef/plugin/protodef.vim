@@ -243,7 +243,7 @@ function! protodef#ReturnSkeletonsFromPrototypesForCurrentBuffer(opts)
                 endif
             endif
             " finish it off
-            call add(full, "}")
+            call add(full, "}//" . substitute(matchstr(proto, '::.*'), ":", "", 'g'))
             call add(full, "")
         endif
     endfor
