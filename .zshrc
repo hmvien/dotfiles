@@ -1,15 +1,37 @@
 # .zshrc
 # zsh settings
-
-export PATH=./:~/bin/:/usr/lib/postgresql/8.4/bin/:$PATH:~/170/nnPython
+export PATH=./:~/bin:~/bin/eclipse:~/bin/mongodb/bin:/opt/local/bin:/opt/local/sbin:~/.rvm/bin:$PATH
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-#Prompt
-PS1=$'%{\e[0;32m%}%B%n%b%{\e[1;32m%}@%m \e[0;33m%}%/
-%{\e[00m%}%# '
+ZSH=$HOME/.oh-my-zsh
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
 
+#source ~/.zsh/git-prompt/zshrc.sh
+#setopt PROMPT_SUBST
+#fpath=(~/.zsh/functions $fpath)
+#autoload -U ~/.zsh/functions/*(:t)
+
+# Enable auto-execution of functions.
+#typeset -ga preexec_functions
+#typeset -ga precmd_functions
+#typeset -ga chpwd_functions
+#  
+## Append git functions needed for prompt.
+#preexec_functions+='preexec_update_git_vars'
+#precmd_functions+='precmd_update_git_vars'
+#chpwd_functions+='chpwd_update_git_vars'
+#
+#Prompt
+PS1=$'%{\e[0;32m%}%B%n%b%{\e[1;32m%}@%m %{\e[0m%}$(git_prompt_info) %{\e[0;33m%}%~
+%{\e[0m%}%# '
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}%{$fg[magenta]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%} %{$fg[yellow]%}✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 
 # if the command-not-found package is installed, use it
 if [ -x /usr/lib/command-not-found ]; then
@@ -37,8 +59,6 @@ autoload -U zcalc
 
 #load other settings
 
-#/usr/bin/mint-fortune
-
 ##################
 ##   COMPLETE   ##
 ##################
@@ -51,7 +71,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
+eval "$(gdircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -143,6 +163,21 @@ alias .../='cd ../../'
 # Goes to the root directory
 alias /='cd /'
 
+alias up='cd ..'
+alias up2='cd ../..'
+alias up3='cd ../../..'
+alias up4='cd ../../../..'
+alias up5='cd ../../../../..'
+alias up6='cd ../../../../../..'
+alias up7='cd ../../../../../../..'
+
+alias jetty='cd ~/ts-code/tapsense/deploy/jetty'
+alias downloadtracker='cd ~/ts-code/tapsense/projects/downloadtracker/java'
+alias downloadtracker_python='cd ~/ts-code/tapsense/projects/downloadtracker/python/src/tapsense/analytics'
+alias dashboard='cd ~/ts-code/tapsense/projects/dashboard/java'
+alias click='cd ~/ts-code/tapsense/projects/clicktracker/java'
+alias impression='cd ~/ts-code/tapsense/projects/imptracker/java'
+alias analytic='cd ~/ts-code/tapsense/projects/analytic/java'
 
 ## Standard aliases - for typos
 # These are the most common typos made by users, even experienced ones.
@@ -150,7 +185,7 @@ alias /='cd /'
 alias maek='make'
 alias alais='alias'
 alias csl='clear'
-alias sl='ls --color=auto'
+alias sl='gls --color=auto'
 
 #allow grep and less to have color
 alias grep='grep --color=auto'
@@ -161,19 +196,24 @@ alias more='less -R'
 
 #use vim
 alias vi="vim"
-alias g="gvim --remote-silent"
+alias g="mvim --remote-silent"
 
 #Standard ls commands
 #list all .* files
-alias l.='ls -d .*'
-alias ls='ls --color=auto'
-alias la='ls -a'
-alias ll='ls -l'
-alias lal='ls -al'
+alias l.='gls -d .*'
+alias ls='gls --color=auto'
+alias la='gls -a'
+alias ll='gls -l'
+alias lal='gls -al'
 
 #aptget
 alias ai='sudo apt-get install'
 
+alias gru='git remote update'
+alias grm='git rebase origin/master'
+alias gittouch='git commit --amend --date="$(date)"'
+
+alias h='history | tail -25'
 ##################
 ##   BINDKEY    ##
 ##################
@@ -204,5 +244,4 @@ export PGDATA=$LOCAL_DB/data
 
 alias startp='pg_ctl -w -l ~/server.log start -o "-c listen_addresses= -c unix_socket_directory=$LOCAL_DB"'
 alias stopp='pg_ctl stop'
-
 

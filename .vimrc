@@ -1,7 +1,9 @@
 "vim configuration file
 
 "Call pathogen
+filetype on
 filetype off 
+call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -38,8 +40,9 @@ set cpoptions=ces$
 "syntax hightlighting
 syntax on
 
-set ts=4
-set shiftwidth=4
+set ts=2
+set shiftwidth=2
+set shiftround       "use multiple of shiftwidth when applying '>' or '<'
 set autoindent
 set expandtab        "use proper tab space
 
@@ -55,6 +58,7 @@ set path=
 set path+=/usr/local/include/**
 set path+=/usr/include/**
 
+set vb               "set visual bell
 set number           "turn on line number
 set ruler            "ensure each window contains a status line
 set showmatch        "enable brief cursor jump to matching brace
@@ -73,6 +77,8 @@ if has("gui_running")
         set guifont=Inconsolata\ Bold\ 11
     elseif has("gui_win32")
         set guifont=Consolas:h11:cANSI
+    else "mac
+        set guifont=Inconsolata:h17
     endif
 else
    set mouse=a                   "enable mouse in terminal
@@ -100,7 +106,6 @@ set nofoldenable        "dont fold by default
 "set backup
 set backup
 set backupdir=~/.vim/backup
-
 
 "highlight search
 set hlsearch
@@ -210,7 +215,7 @@ nmap ; @=FixCommaAndSemicolon(";")<CR>
 nmap , @=FixCommaAndSemicolon(",")<CR>
 vmap ; @=FixCommaAndSemicolon(";")<CR>
 vmap , @=FixCommaAndSemicolon(",")<CR>
-function FixCommaAndSemicolon(command)
+function! FixCommaAndSemicolon(command)
    let s:pos1 = getpos(".")
    execute "normal! " . a:command
    let s:pos2 = getpos(".")
