@@ -71,7 +71,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-if `command -v dircolors`
+if `command -v dircolors > /dev/null`
 then
   eval "$(dircolors -b)"
 else
