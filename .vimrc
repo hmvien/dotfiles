@@ -103,10 +103,6 @@ set foldmethod=syntax   "fold based on indent
 set foldnestmax=4       "deepest fold is 4 levels
 set nofoldenable        "dont fold by default
 
-"set backup
-set backup
-set backupdir=~/.vim/backup
-
 "highlight search
 set hlsearch
 hi Search guifg=yellow guibg=NONE gui=bold ctermfg=yellow ctermbg=NONE cterm=bold
