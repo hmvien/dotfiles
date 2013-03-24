@@ -4,5 +4,9 @@
 !.vim
 !.vim/bundle/vundle
 !.zshrc
+!.zsh
 !.vimrc
 !.gitignore
+!setup.sh
+!.dir_colors
+!.gitconfig
