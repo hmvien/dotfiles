@@ -10,6 +10,8 @@ call vundle#rc()
 ""    Plugins             ""
 """"""""""""""""""""""""""""
 
+Bundle "gmarik/vundle"
+
 " From github
 Bundle "ervandew/supertab"
 Bundle "scrooloose/nerdtree"
