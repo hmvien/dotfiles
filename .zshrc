@@ -6,6 +6,8 @@ export PATH=./:~/bin:~/bin/eclipse:~/bin/mongodb/bin:/opt/local/bin:/opt/local/s
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+
 ZSH=$HOME/.oh-my-zsh
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
@@ -32,9 +34,9 @@ if [ -x /usr/lib/command-not-found ]; then
 }
 fi
 
-# Keep 5000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=5000
-SAVEHIST=5000
+# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 #use vim settings
@@ -42,6 +44,7 @@ bindkey -v
 
 #use shell builtin calculator
 autoload -U zcalc
+
 
 #load other settings
 
