@@ -11,12 +11,12 @@ call vundle#rc()
 """"""""""""""""""""""""""""
 
 " From github
-Bundle "ervandew/supertab.git"
-Bundle "scrooloose/nerdtree.git"
-Bundle "scrooloose/nerdcommenter.git"
-Bundle "scrooloose/syntastic.git"
-Bundle "drmingdrmer/xptemplate.git"
-Bundle "tpope/vim-surround.git"
+Bundle "ervandew/supertab"
+Bundle "scrooloose/nerdtree"
+Bundle "scrooloose/nerdcommenter"
+Bundle "scrooloose/syntastic"
+Bundle "drmingdrmer/xptemplate"
+Bundle "tpope/vim-surround"
 
 " From vim-script github
 Bundle "bufexplorer.zip"
