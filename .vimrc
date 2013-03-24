@@ -1,22 +1,39 @@
 "vim configuration file
+"disable compatibility mode with vi
+set nocompatible
 
-"Call pathogen
-filetype on
 filetype off 
-call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+""""""""""""""""""""""""""""
+""    Plugins             ""
+""""""""""""""""""""""""""""
+
+" From github
+Bundle "ervandew/supertab.git"
+Bundle "scrooloose/nerdtree.git"
+Bundle "scrooloose/nerdcommenter.git"
+Bundle "scrooloose/syntastic.git"
+Bundle "drmingdrmer/xptemplate.git"
+Bundle "tpope/vim-surround.git"
+
+" From vim-script github
+Bundle "bufexplorer.zip"
+Bundle "OmniCppComplete"
+Bundle "taglist.vim"
+Bundle "FSwitch"
+Bundle "FuzzyFinder"
+Bundle "L9"
+Bundle "ProtoDef"
+
 
 """"""""""""""""""""""""""""
 ""    Global settings     ""
 """"""""""""""""""""""""""""
-"disable compatibility mode with vi
-set nocompatible
 
 "turn on specific filetype settings
-filetype on
-filetype indent on
-filetype plugin on
+filetype plugin indent on
 
 "if not on windows, set path
 if !has("gui_win32")
