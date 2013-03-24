@@ -1,5 +1,8 @@
 *
+.vim/bundle/*
+
 !.vim
+!.vim/bundle/vundle
 !.zshrc
 !.vimrc
 !.gitignore
