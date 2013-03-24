@@ -1,5 +1,6 @@
 # .zshrc
 # zsh settings
+
 export PATH=./:~/bin:~/bin/eclipse:~/bin/mongodb/bin:/opt/local/bin:/opt/local/sbin:~/.rvm/bin:$PATH
 
 # If not running interactively, don't do anything
@@ -9,21 +10,6 @@ ZSH=$HOME/.oh-my-zsh
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-#source ~/.zsh/git-prompt/zshrc.sh
-#setopt PROMPT_SUBST
-#fpath=(~/.zsh/functions $fpath)
-#autoload -U ~/.zsh/functions/*(:t)
-
-# Enable auto-execution of functions.
-#typeset -ga preexec_functions
-#typeset -ga precmd_functions
-#typeset -ga chpwd_functions
-#  
-## Append git functions needed for prompt.
-#preexec_functions+='preexec_update_git_vars'
-#precmd_functions+='precmd_update_git_vars'
-#chpwd_functions+='chpwd_update_git_vars'
-#
 #Prompt
 PS1=$'%{\e[0;32m%}%B%n%b%{\e[1;32m%}@%m %{\e[0m%}$(git_prompt_info) %{\e[0;33m%}%~
 %{\e[0m%}%# '
@@ -132,6 +118,15 @@ setopt NOTIFY
 ##     ALIAS    ##
 ##################
 
+# aliasing platform specific binaries
+if [[ "$(uname)" == "Linux" ]]; then
+    alias ls='ls --color=auto'
+    alias g="gvim --remote-silent"
+elif [[ "$(uname)" == "Darwin" ]]; then
+    alias ls='gls --color=auto'
+    alias g="mvim --remote-silent"
+fi
+
 ## Standard aliases - security
 # "-i" asks for confirmation when deleting. This is good.
 # In the "dangerous" section there are aliases for non-confirmation.
@@ -149,8 +144,6 @@ alias rd='rmdir -v'
 ## Standard aliases - convenience
 # To be used as in "cp /etc/inetd.conf /etc/inetd.conf.`today`"
 alias today="date '+%d%h%y'"
-# As in "Message Less", use it on a free terminal to see the logs as they come.
-alias mess='clear ; tail -f /var/log/messages'
 # Pressing "x" and enter exits.
 alias x='exit'
 # Quite handy, type "ff test.c" to find "test.c". 
@@ -176,21 +169,13 @@ alias up5='cd ../../../../..'
 alias up6='cd ../../../../../..'
 alias up7='cd ../../../../../../..'
 
-alias jetty='cd ~/ts-code/tapsense/deploy/jetty'
-alias downloadtracker='cd ~/ts-code/tapsense/projects/downloadtracker/java'
-alias downloadtracker_python='cd ~/ts-code/tapsense/projects/downloadtracker/python/src/tapsense/analytics'
-alias dashboard='cd ~/ts-code/tapsense/projects/dashboard/java'
-alias click='cd ~/ts-code/tapsense/projects/clicktracker/java'
-alias impression='cd ~/ts-code/tapsense/projects/imptracker/java'
-alias analytic='cd ~/ts-code/tapsense/projects/analytic/java'
-
 ## Standard aliases - for typos
 # These are the most common typos made by users, even experienced ones.
 # Send me yours.
 alias maek='make'
 alias alais='alias'
 alias csl='clear'
-alias sl='gls --color=auto'
+alias sl='ls'
 
 #allow grep and less to have color
 alias grep='grep --color=auto'
@@ -201,15 +186,13 @@ alias more='less -R'
 
 #use vim
 alias vi="vim"
-alias g="mvim --remote-silent"
 
 #Standard ls commands
 #list all .* files
-alias l.='gls -d .*'
-alias ls='gls --color=auto'
-alias la='gls -a'
-alias ll='gls -l'
-alias lal='gls -al'
+alias l.='ls -d .*'
+alias la='ls -a'
+alias ll='ls -l'
+alias lal='ls -al'
 
 #aptget
 alias ai='sudo apt-get install'
