@@ -1,9 +1,15 @@
 [core]
     editor = /usr/bin/vim
-    excludesfile = /Users/oxygendev/.gitignore_global
+    excludesfile = ~/.gitignore_global
 [user]
 	name = Hien Vien
 	email = hienmvien@gmail.com
+[branch]
+    # do rebase instead of merge on pull
+    autosetuprebase = always
+[push]
+    # push only the current branch to origin
+    default = tracking
 [alias]
     st = status
     ci = commit
