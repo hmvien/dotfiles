@@ -1,31 +1,31 @@
 [core]
-  editor = /usr/bin/vim
-	excludesfile = /Users/oxygendev/.gitignore_global
+    editor = /usr/bin/vim
+    excludesfile = /Users/oxygendev/.gitignore_global
 [user]
 	name = Hien Vien
 	email = hienmvien@gmail.com
 [alias]
-  st = status
-  ci = commit
-  cia = commit --amend
-  co = checkout
-  br = branch
-  sb = show-branch
-  cp = cherry-pick
-  staged = diff --cached
-  rb = rebase
-  rbc = rebase --continue
-  rbs = rebase --skip
-  rl = reflog
-  rs = remote show
-  rt = remote
-  ru = remote update
-  rp = remote prune
-  sm = submodule
-  touch = "!git commit --amend --date=$date"
+    st = status
+    ci = commit
+    cia = commit --amend
+    co = checkout
+    br = branch
+    sb = show-branch
+    cp = cherry-pick
+    staged = diff --cached
+    rb = rebase
+    rbc = rebase --continue
+    rbs = rebase --skip
+    rl = reflog
+    rs = remote show
+    rt = remote
+    ru = remote update
+    rp = remote prune
+    sm = submodule
+    touch = "!git commit --amend --date=$date"
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
