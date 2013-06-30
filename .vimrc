@@ -3,7 +3,8 @@
 set nocompatible
 
 filetype off 
-set rtp+=~/.vim/bundle/vundle/
+set runtimepath+=~/.vim/
+set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 """"""""""""""""""""""""""""
@@ -23,7 +24,6 @@ Bundle "tpope/vim-surround"
 " From vim-script github
 Bundle "bufexplorer.zip"
 Bundle "OmniCppComplete"
-Bundle "taglist.vim"
 Bundle "FSwitch"
 Bundle "FuzzyFinder"
 Bundle "L9"
@@ -135,7 +135,7 @@ set history=200 "keep 200 lines in command line history
 ""      Mappings          ""
 """"""""""""""""""""""""""""
 " build tags of your own project with Ctrl-F12
-map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+" map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 
 "cd to the directory containing the file in the buffer

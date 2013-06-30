@@ -1,0 +1,99 @@
+# .zshrc
+# zsh settings
+
+# Windows git bash environment
+if [[ "$(uname)" == MING* ]]; then
+    eval `ssh-agent`
+    ssh-add
+fi
+
+# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+
+##################
+##     ALIAS    ##
+##################
+
+# aliasing platform specific binaries
+if [[ "$(uname)" == "Linux" ]]; then
+    alias ls='ls --color=auto'
+    alias g="gvim --remote-silent"
+elif [[ "$(uname)" == "Darwin" ]]; then
+    alias ls='gls --color=auto'
+    alias g="mvim --remote-silent"
+fi
+
+## Standard aliases - security
+# "-i" asks for confirmation when deleting. This is good.
+# In the "dangerous" section there are aliases for non-confirmation.
+alias rm='rm -v -i'
+alias cp='cp -v -i'
+alias mv='mv -v -i'
+
+## Standard aliases - CPM/MSDOS heritage
+alias del='rm -v -i'
+alias cls='clear'
+# "-p" lets you create a path structure with one command, ex. mkdir -p /a/b/c
+alias md='mkdir -v -p'
+alias rd='rmdir -v'
+
+## Standard aliases - convenience
+# To be used as in "cp /etc/inetd.conf /etc/inetd.conf.`today`"
+alias today="date '+%d%h%y'"
+# Pressing "x" and enter exits.
+alias x='exit'
+# Quite handy, type "ff test.c" to find "test.c". 
+# Keep in mind that there is also "locate test.c" which is faster.
+alias ff='find . -name $*'
+# Alias for "." and ".."
+# Shows current directory
+alias .='pwd'
+# Goes back one directory
+alias ..='cd ..'
+# Goes back two directories
+alias ...='cd ../..'
+
+alias up='cd ..'
+alias up2='cd ../..'
+alias up3='cd ../../..'
+alias up4='cd ../../../..'
+alias up5='cd ../../../../..'
+alias up6='cd ../../../../../..'
+alias up7='cd ../../../../../../..'
+
+## Standard aliases - for typos
+# These are the most common typos made by users, even experienced ones.
+# Send me yours.
+alias maek='make'
+alias alais='alias'
+alias csl='clear'
+alias sl='ls'
+
+#allow grep and less to have color
+alias grep='grep'
+alias less='less -R'
+
+#use less
+alias more='less -R'
+
+#use vim
+alias vi="vim"
+
+#Standard ls commands
+#list all .* files
+alias l.='ls -d .*'
+alias la='ls -a'
+alias ll='ls -l'
+alias lal='ls -al'
+
+#aptget
+alias ai='sudo apt-get install'
+
+alias gru='git remote update'
+alias grm='git rebase origin/master'
+alias gittouch='git commit --amend --date="$(date)"'
+
+alias h='history | tail -25'
+
