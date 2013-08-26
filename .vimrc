@@ -18,8 +18,10 @@ Bundle "ervandew/supertab"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/syntastic"
-Bundle "drmingdrmer/xptemplate"
 Bundle "tpope/vim-surround"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
 
 " From vim-script github
 Bundle "bufexplorer.zip"
@@ -259,28 +261,8 @@ set completeopt=menuone,menu,preview
 set sft
 
 """"""""""""""""""""""""""""
-""      XPTemplate        ""
+""      SuperTab        ""
 """"""""""""""""""""""""""""
-"set global variables for XPtemplate"
-let g:xptemplate_vars = "author=Hien Vien&BRloop=\n&SPcmd="
-
-"disable brace complete
-let g:xptemplate_brace_complete = ''
-
-" avoid key conflict
-let g:SuperTabMappingForward = '<Plug>supertabKey'
-
-" if nothing matched in xpt, try supertab
-let g:xptemplate_fallback = '<Plug>supertabKey'
-
-" xpt uses <Tab> as trigger key
-let g:xptemplate_key = '<Tab>'
-
-" " use <tab>/<S-tab> to navigate through pum. Optional
-" let g:xptemplate_pum_tab_nav = 1
-
-" " xpt triggers only when you typed whole name of a snippet. Optional
-" let g:xptemplate_minimal_prefix = 'full'
 
 
 """"""""""""""""""""""""""""
