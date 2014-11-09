@@ -13,6 +13,6 @@ if [[ "$(uname)" != MING* ]]; then
     echo "Installing autojump..."
     git clone git://github.com/joelthelion/autojump.git ~/autojump
     cd ~/autojump
-    ./install.sh
+    python ./install.py
 fi
 
