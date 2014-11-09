@@ -61,8 +61,8 @@ set cpoptions=ces$
 "syntax hightlighting
 syntax on
 
-set ts=4
-set shiftwidth=4
+set ts=2
+set shiftwidth=2
 set shiftround       "use multiple of shiftwidth when applying '>' or '<'
 set autoindent
 set expandtab        "use proper tab space
