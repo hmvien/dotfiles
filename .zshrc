@@ -125,8 +125,10 @@ setopt NOTIFY
 if [[ "$(uname)" == "Linux" ]]; then
     alias ls='ls --color=auto'
     alias g="gvim --remote-silent"
+    alias open="gnome-open"
 elif [[ "$(uname)" == "Darwin" ]]; then
     alias ls='gls --color=auto'
+    alias find='gfind'
     alias g="mvim --remote-silent"
 fi
 
