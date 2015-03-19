@@ -1,0 +1,16 @@
+#!/bin/bash
+ROOT=$(git rev-parse --show-toplevel 2> /dev/null)
+[[ "" == "${ROOT}" ]] && exit 0
+
+GIT_REMOTE_FILE=${ROOT}/.gitremotes
+[[ ! -e ${GIT_REMOTE_FILE} ]] && exit 0
+
+# if exists added remote repos then exit
+[[ "$(git remote -v)" == "" ]] && exit 0
+
+REMOTES=$(sed '/origin/d' ${GIT_REMOTE_FILE} | awk 'NR%2==0 {print $1";"$2 }')
+for r in ${REMOTES}
+do
+  git remote add $(echo ${r} | sed 's/;/ /')
+done
+

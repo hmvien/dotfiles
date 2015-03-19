@@ -1,6 +1,9 @@
 *
 .vim/bundle/*
 
+!.gitmodules
+!.gitremotes
+!.zprezto
 !.vim
 !.vim/bundle/vundle
 !.zshrc
