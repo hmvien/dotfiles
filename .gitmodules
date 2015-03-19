@@ -1,3 +1,6 @@
 [submodule ".zprezto"]
 	path = .zprezto
 	url = git@github.com:hmvien/prezto.git
+[submodule ".maximum-awesome"]
+	path = .maximum-awesome
+	url = git@github.com:hmvien/maximum-awesome.git
