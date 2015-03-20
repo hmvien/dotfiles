@@ -30,6 +30,7 @@ Bundle "FSwitch"
 Bundle "FuzzyFinder"
 Bundle "L9"
 Bundle "ProtoDef"
+Bundle "derekwyatt/vim-scala"
 
 
 """"""""""""""""""""""""""""
@@ -99,7 +100,7 @@ if has("gui_running")
     elseif has("gui_win32")
         set guifont=Consolas:h11:cANSI
     else "mac
-        set guifont=Inconsolata:h17
+        set guifont=Menlo:h14
     endif
 else
    set mouse=a                   "enable mouse in terminal
