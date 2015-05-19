@@ -1,5 +1,12 @@
-#!/bin/bash
-# Only need to run this once 
+#!/usr/bin/zsh
+# Only need to run this once
+
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
+git submodule update --init --recursive
 
 echo "Installing vim vundle..."
 mkdir -p ~/.vim/bundle
@@ -15,4 +22,3 @@ if [[ "$(uname)" != MING* ]]; then
     cd ~/autojump
     python ./install.py
 fi
-
