@@ -1,1 +1,0 @@
-/Users/jetlorer/.zprezto/runcoms/zshrc
