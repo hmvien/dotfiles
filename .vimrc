@@ -69,8 +69,8 @@ set autoindent
 set expandtab        "use proper tab space
 
 "show tags for word completion
-" set showfulltag
-" set completeopt=menuone,longest
+set showfulltag
+set completeopt=menuone,longest
 
 "remove scanning included files
 set complete-=i
@@ -80,7 +80,7 @@ set path=
 set path+=/usr/local/include/**
 set path+=/usr/include/**
 
-set vb               "set visual bell
+set t_vb=            "disable bell
 set number           "turn on line number
 set ruler            "ensure each window contains a status line
 set showmatch        "enable brief cursor jump to matching brace
@@ -93,10 +93,10 @@ set scrolloff=8      "keep cursor below or above 8 lines from bottom
 set diffopt+=iwhite  "diff ignores white space
 
 if has("gui_running")
-    set lines=55 columns=105     "fill half of screen
+    set lines=999 columns=999     "fill full screen
     set guioptions-=T             "remove toolbar
     if has("gui_gtk2")
-        set guifont=Inconsolata\ Bold\ 11
+        set guifont=Inconsolata\ Bold\ 12
     elseif has("gui_win32")
         set guifont=Consolas:h11:cANSI
     else "mac
