@@ -13,10 +13,6 @@ mkdir -p ~/.vim/bundle
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 git clone https://github.com/gcuisinier/jenv.git ~/.jenv
 
-source ~/.zshrc
-jenv add ${JAVA7_HOME}
-jenv add ${JAVA8_HOME}
-
 # not Windows git bash environment
 if [[ "$(uname)" != MING* ]]; then
   if [[ "$(uname)" = Darwin* ]]; then
@@ -37,7 +33,12 @@ if [[ "$(uname)" != MING* ]]; then
     sudo pip3 install virtualenvwrapper
 
     sudo apt-get install terminator
+
     sudo apt-get install openjdk-8-jdk openjdk-8-jre
+    source ~/.zshrc
+    jenv add ${JAVA7_HOME}
+    jenv add ${JAVA8_HOME}
+
     echo; echo; echo
     echo '========='
     echo 'Make sure you run "echo 2 > /sys/module/hid_apple/parameters/fnmode" as root'
