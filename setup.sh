@@ -1,12 +1,12 @@
 #!/usr/bin/zsh
 # Only need to run this once
 
+git submodule update --init --recursive
+
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
-
-git submodule update --init --recursive
 
 echo "Installing vim vundle..."
 mkdir -p ~/.vim/bundle
@@ -34,7 +34,9 @@ if [[ "$(uname)" != MING* ]]; then
 
     sudo apt-get install terminator
 
-    sudo apt-get install openjdk-8-jdk openjdk-8-jre
+    sudo add-apt-repository ppa:openjdk-r/ppa  
+    sudo apt-get update   
+    sudo apt-get install openjdk-7-jdk openjdk-8-jdk openjdk-8-jre maven
     source ~/.zshrc
     jenv add ${JAVA7_HOME}
     jenv add ${JAVA8_HOME}
