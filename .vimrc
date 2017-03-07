@@ -22,6 +22,7 @@ Bundle "tpope/vim-surround"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
+Bundle "christoomey/vim-tmux-navigator"
 
 " From vim-script github
 Bundle "bufexplorer.zip"
@@ -225,6 +226,12 @@ cnoremap <ESC><C-B> <S-Left>
 cnoremap <ESC>f     <S-Right>
 cnoremap <ESC><C-F> <S-Right>
 cnoremap <ESC><C-H> <C-W>
+
+" Ctrl-J/K/L/H select split
+"nnoremap <silent> <C-J> <C-W>j
+"nnoremap <silent> <C-K> <C-W>k
+"nnoremap <silent> <C-L> <C-W>l
+"nnoremap <silent> <C-H> <C-W>h
 
 " Remap ; and , commands so they also work after t and T
 " Only do the remapping for normal and visual mode, not operator pending

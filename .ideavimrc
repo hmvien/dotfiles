@@ -55,7 +55,7 @@ set virtualedit=all     "allow cursor to stray off words
 
 "folding settings
 set foldmethod=syntax   "fold based on indent
-set foldnestmax=4       "deepest fold is 4 levels
+set foldnestmax=4       "deepest fold is 4 levels 
 set nofoldenable        "dont fold by default
 
 "highlight search
@@ -73,37 +73,18 @@ set history=200 "keep 200 lines in command line history
 " build tags of your own project with Ctrl-F12
 " map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-
-"cd to the directory containing the file in the buffer
-nmap <silent> <Leader>cd :lcd %:h<CR>
-
 " Highlight all instances of the current word under the cursor
 nmap <silent> ^ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
-
 
 "newline without entering insert mode
 nnoremap <S-Enter> O<Esc>j
 nnoremap <CR> o<Esc>k
 
-"paste keep format
-inoremap <C-v> <Esc>"+gPi
+nnoremap <C-G> <C-V>
 
 "make <c-l> clear the highlight as well as redraw
 nnoremap <C-L> :nohls<CR><C-L>
 inoremap <C-L> <C-O>:nohls<CR>
-
-" Next Tab
-nnoremap <silent> <C-Right> :tabnext<CR>
-
-" Previous Tab
-nnoremap <silent> <C-Left> :tabprevious<CR>
-
-"open tabs
-nnoremap <silent> <C-t> :tabnew<CR>
-
-" Paste Mode!  Dang! <F10>
-nnoremap <silent> <F10> :call Paste_on_off()<CR>
-set pastetoggle=<F10>
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
@@ -112,26 +93,6 @@ nnoremap n nzz
 
 "make jj go back to normal mode from insert
 inoremap jj <Esc>
-
-" Map <c-s> to search
-inoremap <C-s> <C-o>/
-nnoremap <C-s> /
-
-" Map <c-$> to move to the end of a line in insert mode
-"inoremap <C-$> <C-o>$
-
-" Map <c-^> to move to the beginning of a line in insert mode
-"inoremap <C-^> <C-o>^
-
-" Map <c-f> to move forward a word in insert mode
-inoremap <C-f> <C-o>w
-
-" Map <c-b> to move backward a word in insert mode
-inoremap <C-b> <C-o>b
-
-"edit and source .vimrc
-nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.vimrc<CR>
-nnoremap <Leader>s :source ~/.vimrc<CR>
 
 "Up and down are more logical with g..
 nnoremap <silent> k gk
@@ -145,17 +106,4 @@ nnoremap <silent> - <C-u>
 
 "remap Y to be consistent with C and D
 nnoremap <silent> <S-Y> y$
-
-" allow command line editing like emacs
-cnoremap <C-A>      <Home>
-cnoremap <C-B>      <Left>
-cnoremap <C-E>      <End>
-cnoremap <C-F>      <Right>
-cnoremap <C-N>      <End>
-cnoremap <C-P>      <Up>
-cnoremap <ESC>b     <S-Left>
-cnoremap <ESC><C-B> <S-Left>
-cnoremap <ESC>f     <S-Right>
-cnoremap <ESC><C-F> <S-Right>
-cnoremap <ESC><C-H> <C-W>
 
