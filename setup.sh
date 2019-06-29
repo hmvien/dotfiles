@@ -20,23 +20,15 @@ if [[ "$(uname)" != MING* ]]; then
     git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
   fi
 
-  echo "Installing autojump..."
-  git clone git://github.com/joelthelion/autojump.git ~/autojump
-  cd ~/autojump
-  python ./install.py
-  cd ~
-
   if [[ "$(uname)" = Linux* ]]; then
-    sudo apt-get install python3 python3-pip python3-dev python3-setuptools
-    sudo pip3 install --upgrade pip
-    sudo pip3 install virtualenv
-    sudo pip3 install virtualenvwrapper
+    yay -S python3 python-pip 
+    sudo pip install --upgrade pip
+    sudo pip install virtualenv
+    sudo pip install virtualenvwrapper
 
-    sudo apt-get install terminator
+    yay -S terminator
 
-    sudo add-apt-repository ppa:openjdk-r/ppa  
-    sudo apt-get update   
-    sudo apt-get install openjdk-7-jdk openjdk-8-jdk openjdk-8-jre maven
+    yay -S jdk7-openjdk jdk8-openjdk jre7-openjdk jre8-openjdk maven
     source ~/.zshrc
     jenv add ${JAVA7_HOME}
     jenv add ${JAVA8_HOME}
@@ -45,5 +37,11 @@ if [[ "$(uname)" != MING* ]]; then
     echo '========='
     echo 'Make sure you run "echo 2 > /sys/module/hid_apple/parameters/fnmode" as root'
   fi
+
+  echo "Installing autojump..."
+  git clone git://github.com/joelthelion/autojump.git ~/autojump
+  cd ~/autojump
+  python ./install.py
+  cd ~
 fi
 
