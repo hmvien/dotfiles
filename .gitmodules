@@ -1,6 +1,3 @@
-[submodule ".zprezto"]
-	path = .zprezto
+[submodule "zsh/.zprezto"]
+	path = zsh/.zprezto
 	url = git@github.com:hmvien/prezto.git
-[submodule ".maximum-awesome"]
-	path = .maximum-awesome
-	url = git@github.com:hmvien/maximum-awesome.git
