@@ -8,7 +8,7 @@ elif [[ "$(uname)" = Darwin* ]]; then
   ./setup_mac.sh
 fi
 
-stow home vim zsh git autorandr i3 i3blocks
+stow home vim zsh git autorandr i3 i3blocks compton
 
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
