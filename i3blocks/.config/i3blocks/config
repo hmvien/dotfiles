@@ -1,0 +1,106 @@
+command=~/.config/i3blocks/blocklets/$BLOCK_NAME
+separator_block_width=20
+
+[loadavg]
+command=${I3_BLOCKS_DIR}/load_average/load_average
+label=  
+interval=10
+markup=pango
+
+[cpu_usage]
+command=${I3_BLOCKS_DIR}/cpu_usage/cpu_usage
+label=  
+interval=10
+markup=pango
+#min_width=CPU: 100.00%
+#T_WARN=50
+#T_CRIT=80
+#DECIMALS=2
+
+[memory]
+command=${I3_BLOCKS_DIR}/memory/memory
+label= 
+interval=30
+markup=pango
+
+[temperature]
+command=${I3_BLOCKS_DIR}/temperature/temperature
+label= 
+interval=10
+#T_WARN=70
+#T_CRIT=90
+#SENSOR_CHIP=""
+
+[volume]
+interval=once
+signal=1
+
+[battery-plus]
+command=~/.config/i3blocks/blocklets/i3blocks-battery-plus/battery-plus
+markup=pango
+instance=BAT0
+interval=30
+#_FONT=FontAwesome
+#_PERCENT=&#x25;
+#_HIDE_IF_CHARGED=false
+#_USE_BATT_GRADIENT=false
+#_SYMBOLS_ONLY=false
+#_HIDE_PERCENTAGE=false
+#_HIDE_TIME_REMAINING=true
+#_HIDE_TIME_TO_FULL=true
+#_SHOW_CHARGE_DIRECTION=true
+#_CAPACITY_ALERT=75
+#_CRITICAL_ACTION=notify
+#_LOW_ACTION=notify
+#_NOTIFY_PROGRAM=notify-send
+#_NOTIFY_EXPIRES=1500
+#_NOTIFY_THROTTLE=120
+#_COLOR_FULLY_CHARGED=
+#_COLOR_CHARGING=yellow
+#_COLOR_DISCHARGING=yellow
+#_COLOR_PENDING=blue
+#_COLOR_ERROR=red
+#_COLOR_BATTERY=white
+#_COLOR_ALERT=orange
+#_COLOR_DIRECTIONAL_UP=green
+#_COLOR_DIRECTIONAL_DOWN=red
+#_COLOR_GRADIENT_START=#0000FF
+#_COLOR_GRADIENT_END=#FF0000
+#_SYMBOL_FULLY_CHARGED=
+#_SYMBOL_CHARGING=&#xf0e7;
+#_SYMBOL_DISCHARGING=
+#_SYMBOL_UNKNOWN=&#xf128;
+#_SYMBOL_PENDING=&#xf254;
+#_SYMBOL_ERROR=&#xf00d;
+#_SYMBOL_ALERT=&#xf071;
+#_SYMBOL_BATT_100=&#xf240;
+#_SYMBOL_BATT_75=&#xf241;
+#_SYMBOL_BATT_50=&#xf242;
+#_SYMBOL_BATT_25=&#xf243;
+#_SYMBOL_BATT_0=&#xf244;
+#_SYMBOL_DIRECTION_UP=&#8593;
+#_SYMBOL_DIRECTION_DOWN=&#8595;
+
+
+[time]
+label= 
+interval=1
+command=echo $(date '+ %m/%d/%Y %I:%M:%S')
+
+[shutdown_menu]
+full_text= 
+command=~/.config/i3blocks/blocklets/shutdown_menu/shutdown_menu
+#FG_COLOR=#bbbbbb
+#BG_COLOR=#111111
+#HLFG_COLOR=#111111
+#HLBG_COLOR=#bbbbbb
+#BORDER_COLOR=#222222
+#ROFI_TEXT=Menu:
+#ROFI_OPTIONS=-width 12 -location 3 -hide-scrollbar -bw 2 -theme solarized
+#ZENITY_TITLE=Menu
+#ZENITY_TEXT=Action:
+#ZENITY_OPTIONS=--column= --hide-header
+#ENABLE_CONFIRMATIONS=true (must be true or false)
+#LAUNCHER=rofi (must be rofi or zenity)
+#LOCKSCRIPT=i3lock --color=${BG_COLOR#"#"}
+

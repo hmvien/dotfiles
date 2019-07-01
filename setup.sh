@@ -8,7 +8,7 @@ elif [[ "$(uname)" = Darwin* ]]; then
   ./setup_mac.sh
 fi
 
-stow home vim zsh git autorandr i3
+stow home vim zsh git autorandr i3 i3blocks
 
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
@@ -30,10 +30,22 @@ if [[ "$(uname)" = Linux* ]]; then
   jenv add ${JAVA8_HOME}
 fi
 
+mkdir -p ~/.local-setup
+
+local_setup_dir=~/.local-setup
+
+mkdir -p ${local_setup_dir}
+cd ${local_setup_dir}
+
+
 echo "Installing autojump..."
-git clone git://github.com/joelthelion/autojump.git ~/.autojump
-cd ~/.autojump
+git clone git://github.com/joelthelion/autojump.git ${local_setup_dir}/autojump
+cd ${local_setup_dir}/autojump
 python ./install.py
+
+echo "Installing i3blocks-contrib..."
+cd ${local_setup_dir}
+git clone git@github.com:vivien/i3blocks-contrib.git ${local_setup_dir}/i3blocks-contrib
 
 cd ~/dotfiles
 
