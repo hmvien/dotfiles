@@ -1,37 +1,47 @@
 "vim configuration file
 "disable compatibility mode with vi
-set nocompatible
 
-filetype off 
-set runtimepath+=~/.vim/
-set runtimepath+=~/.vim/bundle/vundle/
-call vundle#rc()
+if &compatible
+  set nocompatible
+endif
+
+filetype off
+
+" append to runtime path
+set rtp+=/usr/share/vim/vimfiles
+" initialize dein, plugins are installed to this directory
+call dein#begin(expand('~/.cache/dein'))
 
 """"""""""""""""""""""""""""
 ""    Plugins             ""
 """"""""""""""""""""""""""""
 
-Bundle "gmarik/vundle"
-
 " From github
-Bundle "ervandew/supertab"
-Bundle "scrooloose/nerdtree"
-Bundle "scrooloose/nerdcommenter"
-Bundle "scrooloose/syntastic"
-Bundle "tpope/vim-surround"
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "christoomey/vim-tmux-navigator"
+call dein#add("ervandew/supertab")
+call dein#add("scrooloose/nerdtree")
+call dein#add("scrooloose/nerdcommenter")
+call dein#add("scrooloose/syntastic")
+call dein#add("tpope/vim-surround")
+call dein#add("MarcWeber/vim-addon-mw-utils")
+call dein#add("tomtom/tlib_vim")
+call dein#add("garbas/vim-snipmate")
+call dein#add("christoomey/vim-tmux-navigator")
 
 " From vim-script github
-Bundle "bufexplorer.zip"
-Bundle "OmniCppComplete"
-Bundle "FSwitch"
-Bundle "FuzzyFinder"
-Bundle "L9"
-Bundle "ProtoDef"
-Bundle "derekwyatt/vim-scala"
+call dein#add("vim-scripts/bufexplorer.zip")
+call dein#add("vim-scripts/OmniCppComplete")
+call dein#add("vim-scripts/FSwitch")
+call dein#add("vim-scripts/FuzzyFinder")
+call dein#add("vim-scripts/L9")
+call dein#add("vim-scripts/ProtoDef")
+
+" exit dein
+call dein#end()
+
+" auto-install missing packages on startup
+if dein#check_install()
+  call dein#install()
+endif
 
 
 """"""""""""""""""""""""""""
@@ -40,11 +50,6 @@ Bundle "derekwyatt/vim-scala"
 
 "turn on specific filetype settings
 filetype plugin indent on
-
-"if not on windows, set path
-if !has("gui_win32")
-    let $VIM = '~/.vim'
-endif
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -103,6 +108,8 @@ if has("gui_running")
     else "mac
         set guifont=Menlo:h14
     endif
+elseif exists('g:GtkGuiLoaded') 
+    call rpcnotify(1, 'Gui', 'Font', 'Inconsolata-g Bold 12')
 else
    set mouse=a                   "enable mouse in terminal
    set t_Co=256                  "activate 256 colors in terminal
@@ -198,8 +205,8 @@ inoremap <C-f> <C-o>w
 inoremap <C-b> <C-o>b
 
 "edit and source .vimrc
-nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.vimrc<CR>
-nnoremap <Leader>s :source ~/.vimrc<CR>
+nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.config/nvim/init.vim<CR>
+nnoremap <Leader>s :source ~/.config/nvim/init.vim<CR>
 
 "Up and down are more logical with g..
 nnoremap <silent> k gk

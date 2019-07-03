@@ -8,16 +8,16 @@ elif [[ "$(uname)" = Darwin* ]]; then
   ./setup_mac.sh
 fi
 
-stow home vim zsh git autorandr i3 i3blocks compton
+stow home nvim zsh git autorandr i3 i3blocks compton
 
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
-echo "Installing vim vundle..."
-mkdir -p ~/.vim/bundle
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+#echo "Installing vim vundle..."
+#mkdir -p ~/.vim/bundle
+#git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 git clone https://github.com/gcuisinier/jenv.git ~/.jenv
 
 if [[ "$(uname)" = Linux* ]]; then
