@@ -13,7 +13,7 @@ hide_edge_borders none
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
-font pango:monospace 12, FontAwesome5Free 12
+font pango:DejaVu Sans Mono 12, FontAwesome5Free 12
 
 #Needed for i3-gaps
 gaps inner 8
@@ -47,6 +47,10 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+
+bindsym $mod+backslash exec nvim-gtk ~/.config/i3/config
+
+bindsym $mod+Control+4 exec flameshot gui
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -82,9 +86,11 @@ bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
+bindsym $mod+d split h
 
 # split in vertical orientation
 bindsym $mod+v split v
+bindsym $mod+Shift+d split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -98,10 +104,12 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+bindsym $mod+Shift+p exec --no-startup-id i3lock --color=111111
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -214,7 +222,7 @@ bindsym $mod+Shift+Tab workspace next
 #bindsym $mod+Tab workspace back_and_forth
 #bindsym $mod+Shift+Tab move container to workspace back_and_forth; workspace back_and_forth
 
-bindsym $mod+d exec --no-startup-id "rofi -theme solarized -font \\"Inconsolata-g 22\\" -show run"
+bindsym $mod+space exec --no-startup-id "rofi -theme solarized -font \\"Inconsolata-g 22\\" -show run"
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -245,11 +253,12 @@ for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [class="Enpass"] floating enable 
+for_window [class="^Enpass"] floating enable 
 
 # Autostart applications
+exec_always --no-startup-id autorandr --load $(autorandr | grep detected | cut -d' ' -f1) --force
+exec_always --no-startup-id nitrogen --restore
 exec --no-startup-id compton -b
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet 
 exec --no-startup-id blueman-applet 
 exec --no-startup-id enpass -g 500x400
