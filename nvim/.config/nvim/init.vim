@@ -49,6 +49,8 @@ endif
 ""    Global settings     ""
 """"""""""""""""""""""""""""
 
+set clipboard+=unnamedplus
+                                                                                  
 "turn on specific filetype settings
 filetype plugin indent on
 
@@ -100,20 +102,20 @@ set scrolloff=8      "keep cursor below or above 8 lines from bottom
 set diffopt+=iwhite  "diff ignores white space
 
 if has("gui_running")
-    set lines=999 columns=999     "fill full screen
-    set guioptions-=T             "remove toolbar
-    if has("gui_gtk2")
-        set guifont=Inconsolata\ Bold\ 12
-    elseif has("gui_win32")
-        set guifont=Consolas:h11:cANSI
-    else "mac
-        set guifont=Menlo:h14
+  set lines=999 columns=999     "fill full screen
+  set guioptions-=T             "remove toolbar
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ Bold\ 12
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  else "mac
+    set guifont=Menlo:h14
     endif
 elseif exists('g:GtkGuiLoaded') 
-    call rpcnotify(1, 'Gui', 'Font', 'Inconsolata-g Bold 12')
+  call rpcnotify(1, 'Gui', 'Font', 'Inconsolata-g Bold 12')
 else
-   set mouse=a                   "enable mouse in terminal
-   set t_Co=256                  "activate 256 colors in terminal
+  set mouse=a                   "enable mouse in terminal
+  set t_Co=256                  "activate 256 colors in terminal
 endif
 
 colorscheme mustang              "activatee theme
@@ -206,7 +208,7 @@ inoremap <C-f> <C-o>w
 inoremap <C-b> <C-o>b
 
 "edit and source .vimrc
-nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.config/nvim/init.vim<CR>
+nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.config/nvim/.vimrc<CR>
 nnoremap <Leader>s :source ~/.config/nvim/init.vim<CR>
 
 "Up and down are more logical with g..
