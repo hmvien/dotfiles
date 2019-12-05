@@ -4,7 +4,7 @@
 yay -S python3 python-pip 
 
 # Java stuff
-yay -S jdk7-openjdk jdk8-openjdk jre7-openjdk jre8-openjdk maven
+yay -S jdk11-openjdk jdk8-openjdk jre11-openjdk jre8-openjdk maven
 
 yay -S stow terminator scmpuff
 

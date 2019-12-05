@@ -7,9 +7,9 @@ if [[ "$(uname)" == MING* ]]; then
     ssh-add
 fi
 
-# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=10000
-SAVEHIST=10000
+# Keep 50000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=50000
+SAVEHIST=50000
 HISTFILE=~/.zsh_history
 
 ##################

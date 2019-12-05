@@ -8,7 +8,8 @@ elif [[ "$(uname)" = Darwin* ]]; then
   ./setup_mac.sh
 fi
 
-stow home nvim zsh git autorandr i3 i3blocks compton
+stow home nvim zsh git autorandr 
+#stow i3 i3blocks compton
 
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
@@ -43,9 +44,9 @@ git clone git://github.com/joelthelion/autojump.git ${local_setup_dir}/autojump
 cd ${local_setup_dir}/autojump
 python ./install.py
 
-echo "Installing i3blocks-contrib..."
-cd ${local_setup_dir}
-git clone git@github.com:vivien/i3blocks-contrib.git ${local_setup_dir}/i3blocks-contrib
+#echo "Installing i3blocks-contrib..."
+#cd ${local_setup_dir}
+#git clone git@github.com:vivien/i3blocks-contrib.git ${local_setup_dir}/i3blocks-contrib
 
 cd ~/dotfiles
 
