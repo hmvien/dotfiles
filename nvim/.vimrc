@@ -19,9 +19,9 @@ call dein#begin(expand('~/.cache/dein'))
 
 " From github
 call dein#add("ervandew/supertab")
-call dein#add("scrooloose/nerdtree")
-call dein#add("scrooloose/nerdcommenter")
-call dein#add("scrooloose/syntastic")
+call dein#add("preservim/nerdtree")
+call dein#add("preservim/nerdcommenter")
+call dein#add("vim-syntastic/syntastic")
 call dein#add("tpope/vim-surround")
 call dein#add("MarcWeber/vim-addon-mw-utils")
 call dein#add("tomtom/tlib_vim")
@@ -49,7 +49,11 @@ endif
 ""    Global settings     ""
 """"""""""""""""""""""""""""
 
-set clipboard+=unnamedplus
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed
+else
+  set clipboard+=unnamedplus
+endif
                                                                                   
 "turn on specific filetype settings
 filetype plugin indent on
