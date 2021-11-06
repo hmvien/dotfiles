@@ -97,3 +97,4 @@ alias gittouch='git commit --amend --date="$(date)"'
 
 alias h='history | tail -25'
 
+export NODE_OPTIONS=--max_old_space_size=4096

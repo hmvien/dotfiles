@@ -8,4 +8,6 @@ yay -S jdk11-openjdk jdk8-openjdk jre11-openjdk jre8-openjdk maven
 
 yay -S stow terminator scmpuff
 
+yay -S colordiff
+
 
