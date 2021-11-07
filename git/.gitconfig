@@ -1,34 +1,36 @@
 [core]
-    editor = /usr/bin/vim
-    excludesfile = ~/.gitignore_global
+  editor = /usr/bin/vim
+  excludesfile = ~/.gitignore_global
 [user]
-	name = Hien Vien
-	email = hienmvien@gmail.com
+  name = Hien Vien
+  email = hienmvien@gmail.com
+[includeIf "gitdir:~/git/"]
+  path = ~/.gitconfig-work
 [branch]
-    # do rebase instead of merge on pull
-    autosetuprebase = always
+  # do rebase instead of merge on pull
+  autosetuprebase = always
 [push]
-    # push only the current branch to origin
-    default = tracking
+  # push only the current branch to origin
+  default = tracking
 [alias]
-    st = status
-    ci = commit
-    cia = commit --amend
-    co = checkout
-    br = branch
-    sb = show-branch
-    cp = cherry-pick
-    staged = diff --cached
-    rb = rebase
-    rbc = rebase --continue
-    rbs = rebase --skip
-    rl = reflog
-    rs = remote show
-    rt = remote
-    ru = remote update
-    rp = remote prune
-    sm = submodule
-    touch = "!git commit --amend --date=$date"
+  st = status
+  ci = commit
+  cia = commit --amend
+  co = checkout
+  br = branch
+  sb = show-branch
+  cp = cherry-pick
+  staged = diff --cached
+  rb = rebase
+  rbc = rebase --continue
+  rbs = rebase --skip
+  rl = reflog
+  rs = remote show
+  rt = remote
+  ru = remote update
+  rp = remote prune
+  sm = submodule
+  touch = "!git commit --amend --date=$date"
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
     path = 
