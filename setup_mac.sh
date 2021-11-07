@@ -10,7 +10,8 @@ brew install coreutils
 brew install tree
 brew install colordiff
 
-brew install adoptopenjdk
+brew install --cask temurin
 
+brew tap homebrew/cask-fonts
 brew install font-fira-code
 
