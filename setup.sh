@@ -37,7 +37,7 @@ cd ${local_setup_dir}
 
 
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein_installer.sh
-./dein_installer.sh ~/.cache/dein
+sh ./dein_installer.sh ~/.cache/dein
 
 cd ~/dotfiles
 
