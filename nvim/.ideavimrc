@@ -1,3 +1,5 @@
+set visualbell
+set noerrorbells
 set clipboard=]
 
 "allow backspacing over everything in insert mode
