@@ -9,6 +9,8 @@
 [branch]
   # do rebase instead of merge on pull
   autosetuprebase = always
+[pull]
+	rebase = true
 [push]
   # push only the current branch to origin
   default = tracking
