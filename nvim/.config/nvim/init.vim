@@ -25,7 +25,6 @@ call dein#add("scrooloose/syntastic")
 call dein#add("tpope/vim-surround")
 call dein#add("MarcWeber/vim-addon-mw-utils")
 call dein#add("tomtom/tlib_vim")
-call dein#add("garbas/vim-snipmate")
 call dein#add("christoomey/vim-tmux-navigator")
 
 " From vim-script github
@@ -144,6 +143,8 @@ set incsearch
 
 set history=200 "keep 200 lines in command line history
 
+" Allow copy on mouse selection
+set mouse=
 
 """"""""""""""""""""""""""""
 ""      Mappings          ""
@@ -208,7 +209,7 @@ inoremap <C-f> <C-o>w
 inoremap <C-b> <C-o>b
 
 "edit and source .vimrc
-nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.config/nvim/.vimrc<CR>
+nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.config/nvim/init.vim<CR>
 nnoremap <Leader>s :source ~/.config/nvim/init.vim<CR>
 
 "Up and down are more logical with g..
