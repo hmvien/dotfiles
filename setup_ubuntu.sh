@@ -8,3 +8,4 @@ sudo apt-get install -y terminator
 sudo apt-get install -y colordiff 
 
 brew install scmpuff
+brew install mise
