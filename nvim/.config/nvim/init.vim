@@ -18,6 +18,7 @@ call dein#begin(expand('~/.cache/dein'))
 """"""""""""""""""""""""""""
 
 " From github
+call dein#add(expand('~/.cache/dein/repos/github.com/Shougo/dein.vim'))
 call dein#add("ervandew/supertab")
 call dein#add("scrooloose/nerdtree")
 call dein#add("scrooloose/nerdcommenter")
@@ -103,13 +104,7 @@ set diffopt+=iwhite  "diff ignores white space
 if has("gui_running")
   set lines=999 columns=999     "fill full screen
   set guioptions-=T             "remove toolbar
-  if has("gui_gtk2")
-    set guifont=Inconsolata\ Bold\ 12
-  elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
-  else "mac
-    set guifont=Menlo:h14
-    endif
+  set guifont=Fira\ Code\ Medium\ 12
 elseif exists('g:GtkGuiLoaded') 
   call rpcnotify(1, 'Gui', 'Font', 'Inconsolata-g Bold 12')
 else

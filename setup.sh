@@ -1,9 +1,25 @@
 #!/usr/bin/env zsh
 # Only need to run this once
+
+set -e 
+
 git submodule update --init --recursive
 
+if ! command -v brew &> /dev/null; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 if [[ "$(uname)" = Linux* ]]; then
-  ./setup_linux.sh
+  # Add brew to path only for this setup script
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  
+  distro=$(lsb_release --id --short | grep -v "No LSB")
+
+  if [[ "$distro" = "Ubuntu" ]]; then
+    ./setup_ubuntu.sh
+  elif [[ "$distro" = "ManjaroLinux" ]]; then
+    ./setup_mancharo.sh
+  fi
 elif [[ "$(uname)" = Darwin* ]]; then
   brew install zsh
   ./setup_mac.sh
@@ -11,33 +27,13 @@ fi
 
 stow home nvim zsh git autorandr 
 
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-
-git clone https://github.com/gcuisinier/jenv.git ~/.jenv
-
-if [[ "$(uname)" = Linux* ]]; then
-  sudo pip install --upgrade pip
-  sudo pip install virtualenv
-  sudo pip install virtualenvwrapper
-
-  source ~/.zshrc
-  jenv add ${JAVA7_HOME}
-  jenv add ${JAVA8_HOME}
+if ! grep -q '.bashrc_local' ~/.bashrc; then
+  echo "source ~/.bashrc_local" >> ~/.bashrc
 fi
 
-mkdir -p ~/.local-setup
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
 
-local_setup_dir=~/.local-setup
-
-mkdir -p ${local_setup_dir}
-cd ${local_setup_dir}
-
-
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein_installer.sh
-sh ./dein_installer.sh ~/.cache/dein
-
-cd ~/dotfiles
-
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)" 

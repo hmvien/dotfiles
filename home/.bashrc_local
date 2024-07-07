@@ -47,14 +47,6 @@ alias x='exit'
 # Quite handy, type "ff test.c" to find "test.c". 
 # Keep in mind that there is also "locate test.c" which is faster.
 alias ff='find . -name $*'
-# Alias for "." and ".."
-# Shows current directory
-alias .='pwd'
-# Goes back one directory
-alias ..='cd ..'
-# Goes back two directories
-alias ...='cd ../..'
-
 alias up='cd ..'
 alias up2='cd ../..'
 alias up3='cd ../../..'
