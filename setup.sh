@@ -26,7 +26,7 @@ elif [[ "$(uname)" = Darwin* ]]; then
 fi
 
 stow home nvim zsh git autorandr 
-ln -s ~/.config/nvim/init.vim ~/.vimrc
+ln -sf ~/.config/nvim/init.vim ~/.vimrc
 
 if ! grep -q '.bashrc_local' ~/.bashrc; then
   echo "source ~/.bashrc_local" >> ~/.bashrc
