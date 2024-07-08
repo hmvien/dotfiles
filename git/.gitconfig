@@ -10,10 +10,12 @@
   # do rebase instead of merge on pull
   autosetuprebase = always
 [pull]
-	rebase = true
+  rebase = true
 [push]
   # push only the current branch to origin
   default = tracking
+[rebase]
+  updateRefs = true
 [alias]
   st = status
   ci = commit
@@ -34,18 +36,18 @@
   sm = submodule
   touch = "!git commit --amend --date=$date"
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [credential "https://github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
+  helper = 
+  helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
+  helper = 
+  helper = !/opt/homebrew/bin/gh auth git-credential
 [url "https://github.com/"]
-	insteadof = ssh://git@github.com/
+  insteadof = ssh://git@github.com/
 [color]
-	ui = auto
+  ui = auto
