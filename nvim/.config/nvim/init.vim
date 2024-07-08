@@ -160,7 +160,7 @@ nnoremap <S-Enter> O<Esc>j
 nnoremap <CR> o<Esc>k
 
 "paste keep format
-inoremap <C-v> <Esc>"+gPi
+"inoremap <C-v> <Esc>"+gPi
 
 "make <c-l> clear the highlight as well as redraw
 nnoremap <C-L> :nohls<CR><C-L>
@@ -175,7 +175,7 @@ nnoremap <silent> <C-Left> :tabprevious<CR>
 "open tabs
 nnoremap <silent> <C-t> :tabnew<CR>
 
-" Paste Mode!  Dang! <F10>
+" Paste Mode! <F10>
 nnoremap <silent> <F10> :call Paste_on_off()<CR>
 set pastetoggle=<F10>
 
