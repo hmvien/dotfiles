@@ -24,6 +24,7 @@ call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 
 call dein#add('vim-syntastic/syntastic')
+call dein#add('easymotion/vim-easymotion')
 call dein#add('tpope/vim-surround')
 
 " exit dein
@@ -243,3 +244,7 @@ let g:syntastic_check_on_wq = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme='bubblegum'
 
+" easymotion
+let g:EasyMotion_smartcase = 1
+map <Leader>w <Leader><Leader>w
+map <Leader>b <Leader><Leader>b
