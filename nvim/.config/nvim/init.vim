@@ -40,6 +40,8 @@ endif
 ""    Global settings     ""
 """"""""""""""""""""""""""""
 
+let mapleader=" "
+
 set clipboard+=unnamedplus
 
 "turn on specific filetype settings

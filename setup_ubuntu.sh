@@ -9,3 +9,4 @@ sudo apt-get install -y colordiff
 
 brew install scmpuff
 brew install mise
+brew install ripgrep
