@@ -8,10 +8,12 @@ return {
         filtered_items = {
           hide_dotfiles = false,
           hide_by_name = {
-            ".git",
             ".DS_STORE",
             "node_modules",
             "thumbs.db",
+          },
+          never_show = {
+            ".git",
           },
         },
       },
