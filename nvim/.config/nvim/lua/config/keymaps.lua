@@ -4,6 +4,7 @@
 
 vim.keymap.set("i", "jj", "<esc>")
 
+-- remove the <esc>-[jk] line swap
 vim.keymap.del("i", "<A-j>")
 vim.keymap.del("i", "<A-k>")
 vim.keymap.del("n", "<A-j>")
