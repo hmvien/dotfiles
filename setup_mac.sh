@@ -9,6 +9,7 @@ brew install scmpuff
 brew install coreutils
 brew install tree
 brew install colordiff
+brew install direnv
 
 brew install --cask temurin
 

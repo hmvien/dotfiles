@@ -1,3 +1,8 @@
+let mapleader=" "
+
+set surround
+set easymotion
+
 set visualbell
 set noerrorbells
 set clipboard=]
@@ -103,10 +108,6 @@ nnoremap <silent> k gk
 nnoremap <silent> j gj
 inoremap <silent> <Up> <Esc>gka
 inoremap <silent> <Down> <Esc>gja
-
-"page down and up
-nnoremap <silent> <Space> <C-d>
-nnoremap <silent> - <C-u>
 
 "remap Y to be consistent with C and D
 nnoremap <silent> <S-Y> y$

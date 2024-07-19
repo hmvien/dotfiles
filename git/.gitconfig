@@ -1,9 +1,18 @@
 [core]
   editor = /usr/bin/vim
   excludesfile = ~/.gitignore_global
+  pager = delta
 [user]
   name = Hien Vien
   email = hienmvien@gmail.com
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+[merge]
+  conflictstyle = diff3
+[diff]
+  colorMoved = default
 [includeIf "gitdir:~/git/"]
   path = ~/.gitconfig-work
 [branch]
@@ -36,6 +45,9 @@
   rp = remote prune
   sm = submodule
   touch = "!git commit --amend --date=$date"
+  lswt = worktree list
+  mkwt = "!f() { git worktree add \"$(git rev-parse --show-toplevel)+$@\"; }; f"
+  rmwt = "!f() { git worktree remove \"$(git rev-parse --show-toplevel)+$@\"; }; f"
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path = 
