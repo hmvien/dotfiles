@@ -1,2 +1,3 @@
 vim/.vim/bundle/*
 .idea
+tmux/.config/tmux/plugins
