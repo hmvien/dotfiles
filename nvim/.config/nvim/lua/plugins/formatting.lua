@@ -22,6 +22,7 @@ end
 return {
   {
     "stevearc/conform.nvim",
+    event = "VeryLazy",
     optional = true,
     opts = {
       -- for language support
@@ -48,6 +49,7 @@ return {
   },
   {
     "williamboman/mason.nvim",
+    event = "VeryLazy",
     opts = {
       ensure_installed = {
         "biome",
