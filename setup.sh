@@ -25,8 +25,7 @@ elif [[ "$(uname)" = Darwin* ]]; then
   ./setup_mac.sh
 fi
 
-stow home nvim zsh git autorandr 
-ln -sf ~/.config/nvim/init.vim ~/.vimrc
+stow home nvim zsh git autorandr wizterm tmux
 
 if ! grep -q '.bashrc_local' ~/.bashrc; then
   echo "source ~/.bashrc_local" >> ~/.bashrc
@@ -37,4 +36,3 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)" 
