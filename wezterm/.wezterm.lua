@@ -31,6 +31,6 @@ config.font = wezterm.font({
 		"ss09",
 	},
 })
-config.font_size = 14.0
+config.font_size = 18.0
 
 return config

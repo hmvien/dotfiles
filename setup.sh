@@ -7,6 +7,7 @@ git submodule update --init --recursive
 
 if ! command -v brew &> /dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 if [[ "$(uname)" = Linux* ]]; then
@@ -25,7 +26,7 @@ elif [[ "$(uname)" = Darwin* ]]; then
   ./setup_mac.sh
 fi
 
-stow home nvim zsh git autorandr wizterm tmux
+stow home nvim zsh git autorandr wezterm tmux
 
 if ! grep -q '.bashrc_local' ~/.bashrc; then
   echo "source ~/.bashrc_local" >> ~/.bashrc

@@ -10,9 +10,13 @@ brew install coreutils
 brew install tree
 brew install colordiff
 brew install direnv
+brew install jenv
+brew install mise
+brew install lazygit
+brew install betterdisplay
 
 brew install --cask temurin
 
-brew tap homebrew/cask-fonts
 brew install font-fira-code
+brew install font-monaspace
 
