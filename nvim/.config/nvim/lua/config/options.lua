@@ -4,3 +4,4 @@
 
 vim.opt.breakindent = true
 vim.opt.autowrite = false
+vim.opt.relativenumber = false
