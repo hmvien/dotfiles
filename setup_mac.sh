@@ -6,6 +6,7 @@ brew install python3
 brew install stow
 brew install scmpuff
 brew install coreutils
+brew install findutils
 brew install tree
 brew install colordiff
 brew install direnv
@@ -15,6 +16,7 @@ brew install lazygit
 brew install betterdisplay
 brew install tmux
 brew install ripgrep
+brew install git-delta
 
 brew install --cask temurin
 
