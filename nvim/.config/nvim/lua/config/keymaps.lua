@@ -9,3 +9,8 @@ vim.keymap.del("i", "<A-j>")
 vim.keymap.del("i", "<A-k>")
 vim.keymap.del("n", "<A-j>")
 vim.keymap.del("n", "<A-k>")
+
+-- map cmd-c to copy. See wezterm config
+vim.keymap.set("n", "<Char-0xAA>", '"+y')
+vim.keymap.set("v", "<Char-0xAA>", '"+y')
+vim.keymap.set("i", "<Char-0xAA>", '"+y')

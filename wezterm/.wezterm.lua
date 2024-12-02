@@ -10,7 +10,7 @@ local function create_mappings(current_mappings)
 	local result = {}
 	local seen = {}
 
-	local all_characters = [[`1234567890-=qwetyuiop[]\asdfghjkl;'zxcvbnm,./]]
+	local all_characters = [[`1234567890-=qwetyuiop[]\asdfghjkl;'zbnm,./]]
 	local characters = {}
 
 	for i = 1, #all_characters do
@@ -48,8 +48,10 @@ config.color_scheme = "Catppuccin Mocha"
 
 config.hide_tab_bar_if_only_one_tab = true
 config.exit_behavior = "CloseOnCleanExit"
-
 config.audible_bell = "Disabled"
+
+config.enable_csi_u_key_encoding = false
+config.enable_kitty_keyboard = true
 
 config.font = wezterm.font({
 	family = "Monaspace Neon",
@@ -75,19 +77,43 @@ config.font = wezterm.font({
 })
 config.font_size = 18.0
 
-config.keys = create_mappings({
-	-- Turn off the default CMD-m Hide action, allowing CMD-m to
-	-- be potentially recognized and handled by the tab
-	{
-		key = "t",
+local function is_nvim(pane)
+	return pane:get_user_vars().PROG == "nvim"
+end
+
+local super_vim_keys_map = {
+	c = utf8.char(0xAA),
+}
+
+local function bind_super_key_to_vim(key)
+	return {
+		key = key,
 		mods = "CMD",
-		action = wezterm.action.DisableDefaultAssignment,
-	},
+		action = wezterm.action_callback(function(win, pane)
+			local char = super_vim_keys_map[key]
+			if char and is_nvim(pane) then
+				win:perform_action({
+					SendKey = { key = char, mods = nil },
+				}, pane)
+			else
+				win:perform_action({
+					SendKey = {
+						key = key,
+						mods = "CMD",
+					},
+				}, pane)
+			end
+		end),
+	}
+end
+
+config.keys = create_mappings({
 	{
 		key = "l",
 		mods = "CMD|CTRL",
 		action = wezterm.action.ShowDebugOverlay,
 	},
+	bind_super_key_to_vim("c"),
 })
 
 return config
