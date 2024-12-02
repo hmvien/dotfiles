@@ -14,6 +14,7 @@ brew install mise
 brew install lazygit
 brew install betterdisplay
 brew install tmux
+brew install ripgrep
 
 brew install --cask temurin
 
