@@ -3,6 +3,7 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("i", "jj", "<esc>")
+vim.keymap.set("n", "gt", "<cmd>bnext<cr>")
 
 -- remove the <esc>-[jk] line swap
 vim.keymap.del("i", "<A-j>")
