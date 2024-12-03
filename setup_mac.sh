@@ -17,6 +17,8 @@ brew install betterdisplay
 brew install tmux
 brew install ripgrep
 brew install git-delta
+brew install fd
+brew install luarocks
 
 brew install --cask temurin
 
