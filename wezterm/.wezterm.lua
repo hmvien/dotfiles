@@ -81,25 +81,20 @@ local function is_nvim(pane)
 	return pane:get_user_vars().PROG == "nvim"
 end
 
-local super_vim_keys_map = {
-	c = utf8.char(0xAA),
-}
-
-local function bind_super_key_to_vim(key)
+local function bind_key_to_vim(key, mods, remapped_char)
 	return {
 		key = key,
-		mods = "CMD",
+		mods = mods,
 		action = wezterm.action_callback(function(win, pane)
-			local char = super_vim_keys_map[key]
-			if char and is_nvim(pane) then
+			if is_nvim(pane) then
 				win:perform_action({
-					SendKey = { key = char, mods = nil },
+					SendKey = { key = remapped_char, mods = nil },
 				}, pane)
 			else
 				win:perform_action({
 					SendKey = {
 						key = key,
-						mods = "CMD",
+						mods = mods,
 					},
 				}, pane)
 			end
@@ -113,7 +108,8 @@ config.keys = create_mappings({
 		mods = "CMD|CTRL",
 		action = wezterm.action.ShowDebugOverlay,
 	},
-	bind_super_key_to_vim("c"),
+	bind_key_to_vim("c", "CMD", utf8.char("0xAA")),
+	bind_key_to_vim("\r", "SHIFT", utf8.char("0xAB")),
 })
 
 return config

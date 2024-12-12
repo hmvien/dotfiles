@@ -11,6 +11,11 @@ vim.keymap.del("i", "<A-k>")
 vim.keymap.del("n", "<A-j>")
 vim.keymap.del("n", "<A-k>")
 
+-- We set up wezterm to remap shift-enter to 0xAB since it didn't send the key to the terminal correctly
+-- add white space above and below the cursor
+vim.keymap.set("n", "<Char-0xAB>", "O<Esc>j")
+vim.keymap.set("n", "<CR>", "o<Esc>k")
+
 -- map cmd-c to copy. See wezterm config
 vim.keymap.set("n", "<Char-0xAA>", '"+y')
 vim.keymap.set("v", "<Char-0xAA>", '"+y')
