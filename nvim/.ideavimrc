@@ -2,10 +2,20 @@ let mapleader=" "
 
 set surround
 set easymotion
+set sneak
 
 set visualbell
 set noerrorbells
 set clipboard=]
+
+" Basic jumps
+nmap <leader>s :action KJumpAction<cr>
+nmap <leader>w :action KJumpAction.Word0<cr>
+nmap <leader>l :action KJumpAction.Line<cr>
+
+" Additional jumps
+nmap <leader>c :action KJumpAction.Char2<cr>
+nmap <leader>f :action KJumpAction.Word1<cr>
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
