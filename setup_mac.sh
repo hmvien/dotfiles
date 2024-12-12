@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-brew install neovim 
+brew install neovim
 brew install vimr
 brew install python3
 brew install stow
@@ -19,9 +19,9 @@ brew install ripgrep
 brew install git-delta
 brew install fd
 brew install luarocks
+brew install shfmt
 
 brew install --cask temurin
 
 brew install font-fira-code
 brew install font-monaspace
-
