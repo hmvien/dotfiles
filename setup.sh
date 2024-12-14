@@ -7,6 +7,7 @@ git submodule update --init --recursive
 
 if ! command -v brew &> /dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 if [[ "$(uname)" = Linux* ]]; then
@@ -25,8 +26,7 @@ elif [[ "$(uname)" = Darwin* ]]; then
   ./setup_mac.sh
 fi
 
-stow home nvim zsh git autorandr 
-ln -sf ~/.config/nvim/init.vim ~/.vimrc
+stow home nvim zsh git autorandr wezterm tmux
 
 if ! grep -q '.bashrc_local' ~/.bashrc; then
   echo "source ~/.bashrc_local" >> ~/.bashrc
@@ -37,4 +37,3 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)" 

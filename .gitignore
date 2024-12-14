@@ -1,2 +1,4 @@
 vim/.vim/bundle/*
 .idea
+tmux/.config/tmux/plugins
+tmux*.log

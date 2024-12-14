@@ -1,11 +1,17 @@
 let mapleader=" "
 
 set surround
-set easymotion
+"set easymotion 
+"set sneak
 
 set visualbell
 set noerrorbells
 set clipboard=]
+
+" Press `s` in normal mode to activate AceJump mode after the caret
+nmap s <Action>(AceForwardAction)
+" Press `S` in normal mode to activate AceJump mode before the caret
+nmap S <Action>(AceBackwardAction)
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
