@@ -3,6 +3,8 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("i", "jj", "<esc>")
+
+-- switch tab with gt
 vim.keymap.set("n", "gt", "<cmd>bnext<cr>")
 
 -- remove the <esc>-[jk] line swap
@@ -20,3 +22,11 @@ vim.keymap.set("n", "<CR>", "o<Esc>k")
 vim.keymap.set("n", "<Char-0xAA>", '"+y')
 vim.keymap.set("v", "<Char-0xAA>", '"+y')
 vim.keymap.set("i", "<Char-0xAA>", '"+y')
+
+-- center the screen after moving with n/N
+vim.keymap.set("n", "N", "Nzz")
+vim.keymap.set("n", "n", "nzz")
+
+-- handle line wrap better with j and k
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
