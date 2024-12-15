@@ -7,6 +7,8 @@ if [[ "$(uname)" == MING* ]]; then
     ssh-add
 fi
 
+eval $(/opt/homebrew/bin/brew shellenv)
+
 # Keep 50000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=50000
 SAVEHIST=50000
