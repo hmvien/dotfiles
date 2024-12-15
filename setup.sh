@@ -26,7 +26,7 @@ elif [[ "$(uname)" = Darwin* ]]; then
   ./setup_mac.sh
 fi
 
-stow home nvim zsh git autorandr wezterm tmux
+stow home nvim zsh git autorandr wezterm tmux sleepwatcher
 
 if ! grep -q '.bashrc_local' ~/.bashrc; then
   echo "source ~/.bashrc_local" >> ~/.bashrc

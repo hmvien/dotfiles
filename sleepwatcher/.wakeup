@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+/Applications/BetterDisplay.app/Contents/MacOS/BetterDisplay set --namelike=27GL850 --connectionMode=5805702836371589632

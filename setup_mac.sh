@@ -8,6 +8,9 @@ brew install mise
 
 # desktop
 brew install betterdisplay
+brew install sleepwatcher
+
+brew services start sleepwatcher
 
 # terminal
 brew install tmux
@@ -22,6 +25,7 @@ brew install colordiff
 brew install ripgrep
 brew install zoxide # fastjump
 brew install fd     # alternative to find
+brew install fzf
 
 # dev tools
 brew install python3
