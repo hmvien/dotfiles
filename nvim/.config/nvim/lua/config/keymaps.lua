@@ -6,6 +6,7 @@ vim.keymap.set("i", "jj", "<esc>")
 
 -- switch tab with gt
 vim.keymap.set("n", "gt", "<cmd>bnext<cr>")
+vim.keymap.set("n", "gT", "<cmd>bprev<cr>")
 
 -- remove the <esc>-[jk] line swap
 vim.keymap.del("i", "<A-j>")
