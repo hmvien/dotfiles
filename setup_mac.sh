@@ -26,6 +26,7 @@ brew install ripgrep
 brew install zoxide # fastjump
 brew install fd     # alternative to find
 brew install fzf
+brew install eza
 
 # dev tools
 brew install python3
