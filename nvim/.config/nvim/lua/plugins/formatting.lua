@@ -44,8 +44,6 @@ return {
         ["markdown.mdx"] = { "biome" },
         ["graphql"] = { "biome" },
         ["handlebars"] = { "biome" },
-        ["sh"] = { "shfmt" },
-        ["zsh"] = { "shfmt" },
       },
     },
   },
@@ -55,7 +53,6 @@ return {
     opts = {
       ensure_installed = {
         "biome",
-        "shfmt",
       },
     },
   },
