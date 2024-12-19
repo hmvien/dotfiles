@@ -14,6 +14,7 @@ brew services start sleepwatcher
 
 # terminal
 brew install tmux
+brew install tpm
 brew install --cask wezterm
 
 # cli tools
