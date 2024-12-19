@@ -26,6 +26,8 @@
   autoSetupRemote = true
 [rebase]
   updateRefs = true
+[rerere]
+	enabled = true
 [alias]
   st = status
   ci = commit
@@ -64,5 +66,3 @@
   insteadof = ssh://git@github.com/
 [color]
   ui = auto
-[rebase]
-	updateRefs = true
