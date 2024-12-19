@@ -64,3 +64,5 @@
   insteadof = ssh://git@github.com/
 [color]
   ui = auto
+[rebase]
+	updateRefs = true
