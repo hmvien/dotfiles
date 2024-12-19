@@ -28,6 +28,7 @@ brew install zoxide # fastjump
 brew install fd     # alternative to find
 brew install fzf
 brew install eza
+brew install tldr
 
 # dev tools
 brew install python3
